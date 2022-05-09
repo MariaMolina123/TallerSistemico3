@@ -10,31 +10,31 @@ package Listas;
  * @author Maria Fernanda
  */
 public class Coordenada {
-    int xStart;
-    int yStart;
-    int xEnd;
-    int yEnd;
+    int height;
+    int width;
+    int x;
+    int y;
 
     public Coordenada(int xStart, int yStart, int xEnd, int yEnd) {
-        this.xStart = xStart;
-        this.yStart = yStart;
-        this.xEnd = xEnd;
-        this.yEnd = yEnd;
+        this.height = xStart;
+        this.width = yStart;
+        this.x = xEnd;
+        this.y = yEnd;
     }
 
     public int getxStart() {
-        return xStart;
+        return height;
     }
 
     public int getyStart() {
-        return yStart;
+        return width;
     }
 
     public int getxEnd() {
-        return xEnd;
+        return x;
     }
 
     public int getyEnd() {
-        return yEnd;
+        return y;
     }
 }
