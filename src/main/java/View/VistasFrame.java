@@ -5,8 +5,8 @@
  */
 package View;
 
-import Model.Coordenada;
-import Model.Nodo;
+import Listas.Coordenada;
+import Listas.Nodo;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -24,18 +24,20 @@ import java.util.Optional;
  * @author Maria Fernanda
  */
 
-public class HomeView extends javax.swing.JFrame {
+public class VistasFrame extends javax.swing.JFrame {
     
     public Nodo lineas;
     public Nodo rectangulos;
     public Nodo circulos;
+    
+    
 
     public int xStart = 0;
     public int yStart = 0;
     public int xEnd = 0;
     public int yEnd = 0;
 
-    public HomeView() {
+    public VistasFrame() {
         initComponents();
         
         Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
@@ -55,11 +57,11 @@ public class HomeView extends javax.swing.JFrame {
             }
             public void mouseReleased(MouseEvent evt) {
                 if(cbxFigura.getSelectedItem() == "Linea"){
-                    lineas = append(lineas, new Coordenada(xStart, yStart, xEnd, yEnd));
+                    lineas = agregar(lineas, new Coordenada(xStart, yStart, xEnd, yEnd));
                 }else if(cbxFigura.getSelectedItem() == "Rectángulo"){
-                    rectangulos = append(rectangulos, new Coordenada(xStart, yStart, xEnd - xStart, yEnd - yStart));
+                    rectangulos = agregar(rectangulos, new Coordenada(xStart, yStart, xEnd - xStart, yEnd - yStart));
                 }else{
-                    circulos = append(circulos, new Coordenada(xStart, yStart, xEnd - xStart, yEnd - yStart));
+                    circulos = agregar(circulos, new Coordenada(xStart, yStart, xEnd - xStart, yEnd - yStart));
                 }
                 repaint();
             }
@@ -99,7 +101,7 @@ public class HomeView extends javax.swing.JFrame {
         }
     }
     
-    public Nodo append(Nodo cabeza, Coordenada value) {
+    public Nodo agregar(Nodo cabeza, Coordenada value) {
         if (cabeza == null) {
             cabeza = new Nodo(value);
             return cabeza;
@@ -236,21 +238,23 @@ public class HomeView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistasFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistasFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistasFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistasFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomeView().setVisible(true);
+                new VistasFrame().setVisible(true);
             }
         });
     }

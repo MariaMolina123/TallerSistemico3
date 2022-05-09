@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Trazos;
 
-import Model.Coordenada;
-import Model.Nodo;
-import View.HomeView;
+import Listas.Coordenada;
+import Listas.Nodo;
+import View.VistasFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -32,9 +32,9 @@ import javax.swing.JOptionPane;
 
 public class HomeController implements ActionListener {
     
-    public HomeView homeView;
+    public VistasFrame homeView;
     
-    public HomeController(HomeView homeView){
+    public HomeController(VistasFrame homeView){
         this.homeView = homeView;
         
         this.homeView.btnAbrir.addActionListener((ActionListener) this);
@@ -84,13 +84,13 @@ public class HomeController implements ActionListener {
         
         
         for (Coordenada posision: stringsLineas) {
-            this.homeView.lineas = this.homeView.append(this.homeView.lineas, posision);
+            this.homeView.lineas = this.homeView.agregar(this.homeView.lineas, posision);
         }
         for (Coordenada posision: stringsRectangulos) {
-            this.homeView.rectangulos = this.homeView.append(this.homeView.rectangulos, posision);
+            this.homeView.rectangulos = this.homeView.agregar(this.homeView.rectangulos, posision);
         }
         for (Coordenada posision: stringsCirculos) {
-            this.homeView.circulos = this.homeView.append(this.homeView.circulos, posision);
+            this.homeView.circulos = this.homeView.agregar(this.homeView.circulos, posision);
         }
         this.homeView.repaint();
     }
@@ -106,6 +106,46 @@ public class HomeController implements ActionListener {
      }
     
     public void guardarComo(){
+        
+        
+                 
+      //    JFileChooser guardar = new JFileChooser();
+     //   guardar.setSelectedFile(new File("dibujo"));
+     //   guardar.setDialogTitle("Guardando dibujo");
+     //   guardar.showDialog(null, "Guardar Dibujo");
+     //   guardar.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
+      //  File archivo = guardar.getSelectedFile();
+
+      //  int tn = obtenerLongitud();
+      //   String[] lineas = new String[tn];
+        // String[] circulo = new String[tn];
+      //   String[] rectangulo = new String[tn];
+    //     if (tn > 0) {
+   
+  //          Node apuntador = cabeza;
+//            while (apuntador != null) {
+     //           lineas[i] = (apuntador.height != null ? apuntador.height : " ") + "\t"
+                //        + (apuntador.width != null ? apuntador.width : " ") + "\t"
+              //          + (apuntador.x != null ? apuntador.x : " ") + "\t"
+            //            + (apuntador.y != null ? apuntador.y: " ");
+          //      apuntador = apuntador.next;
+        //        circulo[i] =(apuntador.height != null ? apuntador.height : " ") + "\t"
+      //                  + (apuntador.width != null ? apuntador.width : " ") + "\t"
+    //                    + (apuntador.x != null ? apuntador.x : " ") + "\t"
+   //                     + (apuntador.y != null ? apuntador.y: " ");
+             //   apuntador = apuntador.next;
+                
+                
+            //    i++;
+          //  }
+            
+         //         String str = String.join(",", lineas);
+         //       str += "\n" + String.join(",", rectangulo);
+       //          str += "\n" + String.join(",", circulo);
+      //        guardarFichero(str, archivo);
+    //}
+
 
         JFileChooser guardar = new JFileChooser();
         guardar.setSelectedFile(new File("dibujo"));

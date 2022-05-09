@@ -1,11 +1,11 @@
 
 package View;
 
-import Controller.HomeController;
+import Trazos.HomeController;
 
 public class startApp {
      public static void main(String[] args) {
-        HomeView homeView = new HomeView();
+        VistasFrame homeView = new VistasFrame();
         
         HomeController homeController = new HomeController(homeView);
         
