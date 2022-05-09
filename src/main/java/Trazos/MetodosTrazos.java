@@ -30,11 +30,11 @@ import javax.swing.JOptionPane;
  * @author Maria Fernanda
  */
 
-public class HomeController implements ActionListener {
+public class MetodosTrazos implements ActionListener {
     
     public VistasFrame homeView;
     
-    public HomeController(VistasFrame homeView){
+    public MetodosTrazos(VistasFrame homeView){
         this.homeView = homeView;
         
         this.homeView.btnAbrir.addActionListener((ActionListener) this);
@@ -48,7 +48,7 @@ public class HomeController implements ActionListener {
             try {
                 abrirDibujo();
             } catch (IOException ex) {
-                Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MetodosTrazos.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else if (e.getSource() == this.homeView.btnGuardar){
             guardarComo();

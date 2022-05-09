@@ -1,13 +1,13 @@
 
 package View;
 
-import Trazos.HomeController;
+import Trazos.MetodosTrazos;
 
 public class startApp {
      public static void main(String[] args) {
         VistasFrame homeView = new VistasFrame();
         
-        HomeController homeController = new HomeController(homeView);
+        MetodosTrazos homeController = new MetodosTrazos(homeView);
         
         homeController.homeView.setVisible(true);
         
